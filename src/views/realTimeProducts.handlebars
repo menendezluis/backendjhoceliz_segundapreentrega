@@ -1,0 +1,77 @@
+<div>
+    <h1>Productos</h1>
+<div class="container">
+<form id="productForm" class="productForm"   method="POST" action="/realtimeproducts">
+    <label for="productName">Nombre del producto:</label>
+    <input
+        type="text"
+        id="productName"
+        name="name"
+        placeholder="Nombre del producto"
+    />
+
+    <label for="productTitle">Título:</label>
+    <input
+        type="text"
+        id="productTitle"
+        name="title"
+        placeholder="Título del producto"
+    />
+
+    <label for="productDescription">Descripción:</label>
+    <textarea
+        id="productDescription"
+        name="description"
+        placeholder="Descripción del producto"
+    ></textarea>
+
+    <label for="productPrice">Precio:</label>
+    <input
+        type="number"
+        id="productPrice"
+        name="price"
+        step="0.01"
+        placeholder="Precio del producto"
+    />
+
+    <label for="productThumbnail">Thumbnail:</label>
+    <input
+        type="text"
+        id="productThumbnail"
+        name="thumbnail"
+        placeholder="URL del thumbnail"
+    />
+
+    <label for="productCode">Código:</label>
+    <input
+        type="text"
+        id="productCode"
+        name="code"
+        placeholder="Código del producto"
+    />
+
+    <label for="productStock">Stock:</label>
+    <input
+    type="number"
+    id="productStock"
+    name="stock"
+    placeholder="Stock del producto"
+    />
+
+    <button type="submit">Agregar</button>
+</form>
+</div>
+<ul id="productList" class="productList">
+    {{#each products}}
+    <li>
+        <h3>{{name}}</h3>
+        <p>Título: {{title}}</p>
+        <p>Descripción: {{description}}</p>
+        <p>Precio: {{price}}</p>
+        <img src={{thumbnail}} />
+        <button class="deleteButton" data-id="{{this.id}}">Eliminar</button>
+    </li>
+    {{/each}}
+</ul>
+    
+</div>

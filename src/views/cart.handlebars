@@ -1,0 +1,33 @@
+<div>
+  <h1>Carrito</h1>
+{{!-- 
+  <form>
+    <button type="button" onclick="emptyCart('/api/carts/{{cid}}')">Vaciar carrito</button>
+  </form> --}}
+
+  {{#each cart}}
+
+  <p><b>Title:</b> {{this.item.title}}</p>
+  <p><b>Description:</b> {{this.item.description}}</p>
+  <p><b>Price:</b> {{this.item.price}}</p>
+  <p><b>Quantity:</b> {{this.quantity}}</p>
+  <form>
+    <td>
+      <button class="decrement" data-id="{{ this._id }}">-</button>
+      {{ this.quantity }}
+      <button class="increment" data-id="{{ this._id }}">+</button>
+    </td>
+    <td>
+      <button class="remove" data-id="{{ this._id }}">Eliminar</button>
+    </td>
+
+  </form>
+  {{#if thumbnail.length}}
+  <p><b>Thumbnail:</b> {{thumbnail}}</p>
+  {{/if}}
+  <hr>
+  </hr>
+  {{/each}}
+
+
+</div>
